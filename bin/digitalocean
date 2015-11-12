@@ -2,4 +2,4 @@
 
 export VAGRANT_DEFAULT_PROVIDER="digital_ocean"
 
-source sub "$0" "$@"
+exec parity "$@"
