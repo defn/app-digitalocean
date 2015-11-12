@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-export PROVIDER="digitalocean"
+export PROVIDER="digital_ocean"
 
 source sub "$0" "$@"
