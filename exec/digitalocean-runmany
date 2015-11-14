@@ -4,7 +4,7 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  tb regions | awk '/slug:/ { print $NF}' | cut -d')' -f1 | sort | grep -v 'ams1' # TODO remove once ams1 is back up
+  exec runmany "$@" -- $(digitalocean regions)
 }
 
 source sub "$BASH_SOURCE" "$@"
