@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+function main {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  PATH="$shome/bin:$shome/exec:$PATH"
+
+  tb regions | awk '/slug:/ { print $NF}' | cut -d')' -f1 | sort | grep -v 'ams1' # TODO remove once ams1 is back up
+}
+
+source sub "$BASH_SOURCE" "$@"
