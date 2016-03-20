@@ -4,6 +4,11 @@ function bootstrap {
   local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
   source "$shome/script/profile"
 
+  which ruby
+  which bundle bundle
+  which rbenv
+  rbenv version
+
   block compile bundler
   ln -nfs "$shome/vendor/bundle/bin/tugboat" "$shome/bin/"
 }
